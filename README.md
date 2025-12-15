@@ -89,6 +89,7 @@ Comprehensive documentation is available in the `docs/` directory:
 - **[Deployment](./docs/DEPLOYMENT.md)** - Production deployment guide
 - **[Styling](./docs/STYLING.md)** - Windows XP theme documentation
 - **[Troubleshooting](./docs/TROUBLESHOOTING.md)** - Common issues and solutions
+- **[Common Errors](./docs/COMMON_ERRORS.md)** - Error messages reference and fixes
 
 ## Development
 
