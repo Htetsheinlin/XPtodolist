@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Windows XP Color Palette */
+  --xp-taskbar-blue: #245EDB;
+  --xp-window-bg: #ECE9D8;
+  --xp-window-border: #808080;
+  --xp-button-face: #ECE9D8;
+  --xp-button-highlight: #FFFFFF;
+  --xp-button-shadow: #808080;
+  --xp-button-dark-shadow: #000000;
+  --xp-text: #000000;
+  --xp-desktop-bg: #3A6EA5;
+  --xp-title-bar-active: #0054E3;
+  --xp-title-bar-inactive: #808080;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--xp-desktop-bg);
+  --color-foreground: var(--xp-text);
+  --font-sans: Tahoma, "MS Sans Serif", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--xp-desktop-bg);
+  color: var(--xp-text);
+  font-family: Tahoma, "MS Sans Serif", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Windows XP 3D Button Effect - Raised */
+.xp-button-raised {
+  border: 2px outset var(--xp-button-face);
+  background: var(--xp-button-face);
+  color: var(--xp-text);
+  padding: 2px 12px;
+  font-family: Tahoma, "MS Sans Serif", sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.xp-button-raised:hover {
+  border: 2px outset var(--xp-button-face);
+  background: var(--xp-button-face);
+}
+
+.xp-button-raised:active {
+  border: 2px inset var(--xp-button-face);
+  background: var(--xp-button-face);
+}
+
+.xp-button-raised:disabled {
+  border: 2px outset var(--xp-button-face);
+  background: var(--xp-button-face);
+  color: #808080;
+  cursor: default;
+}
+
+/* Windows XP Input Field */
+.xp-input {
+  border: 2px inset var(--xp-button-face);
+  background: #FFFFFF;
+  color: var(--xp-text);
+  padding: 2px 4px;
+  font-family: Tahoma, "MS Sans Serif", sans-serif;
+  font-size: 11px;
+}
+
+.xp-input:focus {
+  outline: 1px dotted #000000;
+  outline-offset: -2px;
+}
+
+/* Windows XP Window Frame */
+.xp-window {
+  border: 2px solid var(--xp-window-border);
+  background: var(--xp-window-bg);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Windows XP Title Bar */
+.xp-title-bar {
+  background: linear-gradient(to bottom, var(--xp-title-bar-active), #0044CC);
+  color: #FFFFFF;
+  padding: 2px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.xp-title-bar-inactive {
+  background: linear-gradient(to bottom, var(--xp-title-bar-inactive), #5A5A5A);
+}
+
+/* Windows XP Checkbox */
+.xp-checkbox {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #808080;
+  background: #FFFFFF;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.xp-checkbox:checked {
+  background: #FFFFFF;
+}
+
+.xp-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  left: 2px;
+  top: -1px;
+  color: #000000;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.xp-checkbox:focus {
+  outline: 1px dotted #000000;
+}
+
+/* Windows XP Panel/Container */
+.xp-panel {
+  background: var(--xp-window-bg);
+  border: 1px solid var(--xp-window-border);
+  padding: 4px;
+}
+
+/* Windows XP Dialog */
+.xp-dialog {
+  border: 2px solid var(--xp-window-border);
+  background: var(--xp-window-bg);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
